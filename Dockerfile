@@ -26,6 +26,9 @@ RUN \
     libxcb-image0-dev \
     libxcb-render-util0-dev \
     libxcb-keysyms1-dev \
+    fonts-wqy-microhei \
+    fonts-wqy-zenhei \
+    ttf-mscorefonts-installer \
     zenity && \
   apt-get install -y --no-install-recommends \
     /tmp/QQ_3.2.18_250710_amd64_01.deb
