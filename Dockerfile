@@ -44,6 +44,7 @@ RUN \
 
 # add local files
 COPY /root /
+RUN chmod +x /usr/bin/wrapped-qq
 
 # ports and volumes
 EXPOSE 3000
