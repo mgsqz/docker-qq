@@ -1,0 +1,14 @@
+#!/bin/bash
+
+BIN=/opt/QQ/qq
+
+# Cleanup
+if ! pgrep qq > /dev/null;then
+  rm -f $HOME/.config/qq/Singleton*
+fi
+
+# Run normally on privved containers or modified un non priv
+if grep -q 'Seccomp:.0' /proc/1/status; then
+  ${BIN} \
+   "$@" > /dev/null 2>&1
+fi
