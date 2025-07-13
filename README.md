@@ -1,6 +1,4 @@
-# [sassv/wechat](https://github.com/henry-proj/docker-wechat)
-可在网页访问的微信，使用的Linux原生版本微信，基础镜像来自于[LinuxServer.io](https://www.linuxserver.io/)
-![view](./img/view.png)
+可在网页访问的QQ，使用的Linux原生版本QQ，基础镜像来自于[LinuxServer.io](https://www.linuxserver.io/)
 
 ## 支持的架构
 该镜像支持的架构有：
@@ -43,7 +41,7 @@
 ```yaml
 services:
   wechat:
-    image: sassv/wechat:latest
+    image: firephoenix/qq:latest
     container_name: wechat
     security_opt:
       - seccomp:unconfined #optional
@@ -69,7 +67,7 @@ services:
 ### docker cli
 ```yaml
 docker run -d \
-  --name=wechat \
+  --name=qq \
   --security-opt seccomp=unconfined `#optional` \
   -e PUID=1000 \
   -e PGID=1000 \
@@ -81,7 +79,7 @@ docker run -d \
   --device /dev/dri:/dev/dri \
   --shm-size="4gb" \
   --restart unless-stopped \
-  sassv/wechat:latest
+  firephoenix/qq:latest
 ```
 ## 参数
 容器是通过在运行时传递的参数（如上述所示）进行配置的。这些参数用冒号分隔，并分别表示`< external >:< internal >`。例如，`-p 8080:80` 将使容器内的80端口可以从容器外部的主机 IP 的8080端口上进行访问。
@@ -103,7 +101,7 @@ server {
     listen [::]:80;
     listen 443 ssl;
     listen [::]:443 ssl;
-    server_name wechat.example.com;
+    server_name qq.example.com;
 
     ssl_certificate /etc/nginx/ssl/example.com/example.com.crt;
     ssl_certificate_key /etc/nginx/ssl/example.com/example.com.key;
